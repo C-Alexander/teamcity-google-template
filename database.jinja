@@ -27,14 +27,14 @@ limitations under the License.
 
 resources:
 - name: create-user
-  type: gcp-types/sqladmin-v1beta4:users
+  type: sqladmin-v1beta4:users
   properties:
     name: {{ TEAMCITY_USER }}
     instance: {{ INSTANCE_NAME }}
     host: "cloudsqlproxy~%"
 
 - name: create-database
-  type: gcp-types/sqladmin-v1beta4:databases
+  type: sqladmin-v1beta4:databases
   metadata:
     dependsOn:
     - create-user
