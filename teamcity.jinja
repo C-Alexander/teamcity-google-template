@@ -27,6 +27,7 @@ resources:
   properties:
     baseName: {{ BASE_NAME }}
     zone: {{ properties['zone'] }}
+    password: {{ properties['password'] }}
     size: {{ properties['installationSize'] }}
 
 {%- if not properties['network'] %}
@@ -59,6 +60,7 @@ resources:
     zone: {{ properties['zone'] }}
     teamcityVersion: {{ properties['version'] }}
     ipAddress: {{ properties['ipAddress'] }}
+    password: {{ properties['password'] }}
     enableHttps: {{ ENABLE_HTTPS }}
 {%- if ENABLE_HTTPS %}
     domainName: {{ properties['domainName'] }}
