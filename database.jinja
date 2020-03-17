@@ -18,6 +18,7 @@ limitations under the License.
 {% set TEAMCITY_DB = 'teamcitydb' %}
 {% set TEAMCITY_USER = 'teamcity' %}
 {% set INSTANCE_NAME = 'postgres-malone' %}
+{% set DB_PASSWORD =  properties['password'] %}
 
 {% if properties['size'] == 'large' %}
   {% set DB_TIER = 'db-n1-standard-2' %}
@@ -31,6 +32,7 @@ resources:
   properties:
     name: {{ TEAMCITY_USER }}
     instance: {{ INSTANCE_NAME }}
+    password: {{ DB_PASSWORD }}
     host: "cloudsqlproxy~%"
 
 - name: create-database
