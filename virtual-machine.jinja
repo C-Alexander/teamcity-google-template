@@ -90,6 +90,12 @@ resources:
         value: |
           #cloud-config
           write_files:
+          - path: "/etc/teamcity/version2"
+            content: |
+              testingshit
+          - path: "/etc/teamcity/version3"
+            content: |
+              testing shit
           - path: "/etc/teamcity/version"
             content: |
               TEAMCITY_VERSION={{ properties['teamcityVersion'] }}
